@@ -7,7 +7,7 @@ node {
     sh('ant clean')
   }
   stage('Build'){
-    sh('ant clean')
+    sh('ant')
   }
   stage('Report'){
     echo currentBuild.durationString
