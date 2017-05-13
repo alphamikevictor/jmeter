@@ -11,6 +11,5 @@ node {
   }
   stage('Report'){
     echo currentBuild.durationString
-    echo 
   }
 }
