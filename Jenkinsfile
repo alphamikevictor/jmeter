@@ -21,6 +21,7 @@ node {
         sh("${antTool}/bin/ant download_jars")
       }
       else{
+        bat("env")
         bat("${antTool}\\bin\\ant download_jars")
       }
     }
