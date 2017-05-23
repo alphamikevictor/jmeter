@@ -16,7 +16,12 @@ node {
     }
   }
   stage('Download Jars'){
-    bat('ant download_jars')
+    if (isUnix()){
+      sh("${antTool}/bin/ant download_jars")
+    }
+    else{
+      bat("${antTool}\\bin\\ant download_jars")
+    }
   }
   stage('Build'){
     bat('ant')
