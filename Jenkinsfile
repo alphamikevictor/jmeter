@@ -16,11 +16,13 @@ node {
     }
   }
   stage('Download Jars'){
-    if (isUnix()){
-      sh("${antTool}/bin/ant download_jars")
-    }
-    else{
-      bat("${antTool}\\bin\\ant download_jars")
+    withEnv(['ANT_OPTS="-Dhttp.proxyHost=praesges01 -Dhttp.proxyPort=8888"']){
+      if (isUnix()){
+        sh("${antTool}/bin/ant download_jars")
+      }
+      else{
+        bat("${antTool}\\bin\\ant download_jars")
+      }
     }
   }
   stage('Build'){
