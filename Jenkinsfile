@@ -8,7 +8,7 @@ node {
     checkout scm
   }
   stage('Clean'){
-    if isUnix(){
+    if (isUnix()){
       sh("${antTool}/bin/ant clean")
     }
     else{
