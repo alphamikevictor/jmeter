@@ -21,8 +21,8 @@ node {
         sh("${antTool}/bin/ant ${env.ANT_OPTS} setproxy download_jars")
       }
       else{
-        bat("env")
-        bat("${antTool}\\bin\\ant ${env.ANT_OPTS} setproxy download_jars")
+        bat("${antTool}\\bin\\ant ${env.ANT_OPTS} setproxy")
+        bat("${antTool}\\bin\\ant ${env.ANT_OPTS} download_jars")
       }
     }
   }
