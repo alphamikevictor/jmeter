@@ -16,7 +16,7 @@ node {
     }
   }
   stage('Download Jars'){
-    withEnv(['ANT_OPTS="-Dhttp.proxyHost=praesges01 -Dhttp.proxyPort=8888"']){
+    withEnv(['ANT_OPTS="-Dproxy.user=praesges01 -Dproxy.host=8888 -Dproxy.user=y"']){
       if (isUnix()){
         sh("${antTool}/bin/ant ${env.ANT_OPTS} setproxy download_jars")
       }
