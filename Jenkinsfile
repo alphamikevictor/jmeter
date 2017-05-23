@@ -1,5 +1,9 @@
 #!groovy
+def antTool
 node {
+  stage('Config Ant Tool'){
+    antTool = tool ANT
+  }
   stage('Get Repository'){
     checkout scm
   }
