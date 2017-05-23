@@ -8,7 +8,12 @@ node {
     checkout scm
   }
   stage('Clean'){
-    bat("${antTool} clean")
+    if isUnix(){
+      sh("${antTool}/bin/ant clean")
+    }
+    else{
+      bat("${antTool}\\bin\\ant clean")
+    }
   }
   stage('Download Jars'){
     bat('ant download_jars')
