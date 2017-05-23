@@ -8,7 +8,7 @@ node {
     checkout scm
   }
   stage('Clean'){
-    bat('ant clean')
+    bat("${antTool} clean")
   }
   stage('Download Jars'){
     bat('ant download_jars')
