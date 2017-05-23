@@ -4,13 +4,13 @@ node {
     checkout scm
   }
   stage('Clean'){
-    sh('ant clean')
+    bat('ant clean')
   }
   stage('Download Jars'){
-    sh('ant download_jars')
+    bat('ant download_jars')
   }
   stage('Build'){
-    sh('ant')
+    bat('ant')
   }
   stage('Report'){
     echo currentBuild.durationString
