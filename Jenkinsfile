@@ -2,7 +2,7 @@
 def antTool
 node {
   stage('Config Ant Tool'){
-    antTool = tool ANT
+    antTool = tool name:'ANT'
   }
   stage('Get Repository'){
     checkout scm
