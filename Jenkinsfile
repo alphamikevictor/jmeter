@@ -18,11 +18,11 @@ node {
   stage('Download Jars'){
     withEnv(['ANT_OPTS="-Dhttp.proxyHost=praesges01 -Dhttp.proxyPort=8888"']){
       if (isUnix()){
-        sh("${antTool}/bin/ant download_jars")
+        sh("${antTool}/bin/ant ${env.ANT_OPTS} download_jars")
       }
       else{
         bat("env")
-        bat("${antTool}\\bin\\ant download_jars")
+        bat("${antTool}\\bin\\ant ${env.ANT_OPTS} download_jars")
       }
     }
   }
